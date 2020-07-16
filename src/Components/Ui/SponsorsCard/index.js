@@ -1,57 +1,24 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
-import styled from 'styled-components/native';
 import Products from '../../../StaticData/Products';
 import DefaultButton from '../DefaultButton';
+import {
+  Card,
+  ViewCard,
+  ImageCard,
+  Title,
+  Price,
+  FakeBackground,
+} from './styles';
 
 const sliderWidth = 600;
 const itemWidth = 300;
 
-const Card = styled.View`
-  background: #666;
-  border-radius: 20px;
-  margin-top: 10;
-`;
-
-const ViewCard = styled.View`
-  width: 80%;
-  position: absolute;
-  bottom: 0;
-  align-self: center;
-  margin-bottom: 10;
-`;
-
-const ImageCard = styled.Image`
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  flex: 1;
-  border-radius: 20px;
-`;
-
-const Title = styled.Text`
-  color: #fff;
-  font-weight: bold;
-  font-size: 22;
-`;
-
-const Price = styled.Text`
-  color: #fecd0a;
-  font-weight: bold;
-  font-size: 32;
-`;
-
-const FakeBackground = styled.View`
-  background: #f74540;
-  height: 100;
-  width: 100%;
-  margin-bottom: -100;
-`;
-
 function SponsorsCard() {
   const [activeSlide, setActiveSlide] = useState(2);
 
-  function _renderItem({item, index}) {
+  function _renderItem({item}) {
     return (
       <Card>
         <ImageCard resizeMode="cover" source={item.imageCard} />
@@ -91,7 +58,7 @@ function SponsorsCard() {
           backgroundColor: '#f74540',
         }}
         inactiveDotStyle={{
-          backgroundColor: '#333',
+          backgroundColor: '#666',
         }}
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}

@@ -14,7 +14,7 @@ const Title = styled.Text`
   margin-bottom: 10;
 `;
 
-export default function HomeScreen() {
+export default function RecommendedScreen() {
   return (
     <DefaultView>
       <Title>Recomendado para você</Title>

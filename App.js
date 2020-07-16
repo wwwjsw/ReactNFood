@@ -7,7 +7,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './src/Screens/HomeScreen';
 import LoginScreen from './src/Screens/LoginScreen';
 import RecommendedScreen from './src/Screens/RecommendedScreen';
-import OverviewScreen from './src/Screens/OverView';
+import OverviewScreen from './src/Screens/Overview';
 import ScheduleScreen from './src/Screens/ScheduleScreen';
 
 const RootStack = createStackNavigator();
@@ -39,14 +39,14 @@ function App() {
             component={LoginScreen}
           />
           <RootStack.Screen
-            name="Recommended"
-            options={headerOptions}
-            component={RecommendedScreen}
+            name="Overview"
+            options={{...headerOptions, ...{title: 'Overview'}}}
+            component={OverviewScreen}
           />
           <RootStack.Screen
-            name="Overview"
-            options={headerOptions}
-            component={OverviewScreen}
+            name="Recommended"
+            options={{...headerOptions, ...{title: 'Recommended'}}}
+            component={RecommendedScreen}
           />
           <RootStack.Screen
             name="Schedule"
